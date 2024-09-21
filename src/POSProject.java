@@ -63,5 +63,5 @@ public class POSProject {
 
     public static void main(String[] args) {
     mainWindow();
-    }
+    } //
 }
