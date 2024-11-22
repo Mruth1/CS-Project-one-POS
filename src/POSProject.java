@@ -15,8 +15,8 @@ public class POSProject {
     static void mainWindow() {
         JFrame mainframe = new JFrame("POS System"); // the window name
         mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainframe.setSize(2560, 1440); //resolution of my main monitor
-        mainframe.setVisible(true);
+        mainframe.setSize(800, 600);
+        mainframe.setLayout(new BorderLayout());
         JPanel totalCostPanel = totalCost(); // creates total costpanel to mainWindow
         mainframe.add(totalCostPanel, BorderLayout.EAST); // sets the totalcostPanel to the right side of the GUI
 
@@ -27,12 +27,13 @@ public class POSProject {
 
         //create a panel for foods to be in
         JPanel foodPanel = new JPanel();
+        // (use this for later) foodPanel.setLayout(new GridLayout(2, 1));
         foodPanel.setBorder(BorderFactory.createTitledBorder("Food List"));
         foodPanel.add(classicsFood);
         foodPanel.add(uniqueFood);
 
         mainframe.add(foodPanel, BorderLayout.CENTER);
-
+        mainframe.setVisible(true);
     }
 
     // create a window displaying the total cost, this will have a subtotal and implement the state tax in florida as two seperate values. then adds the both to show "amount due"
